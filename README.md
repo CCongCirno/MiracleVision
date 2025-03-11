@@ -1,4 +1,7 @@
 # MiracleVision
+
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/CCongCirno/MiracleVision?color=green)](https://www.codefactor.io/repository/github/ccongcirno/miraclevision)
+
 A robot vision project for RoboMaster
 
 Iterate from RoboVision_Sirius(dgsyrc)
