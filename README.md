@@ -150,18 +150,6 @@ sudo ./bin/MiracleVision
 | 16 (预测坐标 & 深度) | 直接拆分高低8位即可                                     |
 | 8                    | 原始数据*10去尾转换为unsigned char (u_int8_t)类型       |
 
-
-
-## some command
-
-```
-cd ***
-git add .
-git commit -m "commit"
-git push -u origin main
-```
-
-
 ## log
 
 2024/02/20
