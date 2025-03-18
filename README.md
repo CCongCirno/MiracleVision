@@ -1,4 +1,7 @@
 # MiracleVision
+
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/CCongCirno/MiracleVision?color=green)](https://www.codefactor.io/repository/github/ccongcirno/miraclevision)
+
 A robot vision project for RoboMaster
 
 Iterate from RoboVision_Sirius(ccongcirno)
@@ -146,18 +149,6 @@ sudo ./bin/MiracleVision
 | 16 (raw & pitch)     | 原始数据*100去尾转换为short (int16_t)类型再拆分高低八位 |
 | 16 (预测坐标 & 深度) | 直接拆分高低8位即可                                     |
 | 8                    | 原始数据*10去尾转换为unsigned char (u_int8_t)类型       |
-
-
-
-## some command
-
-```
-cd ***
-git add .
-git commit -m "commit"
-git push -u origin main
-```
-
 
 ## log
 
