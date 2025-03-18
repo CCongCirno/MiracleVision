@@ -640,7 +640,7 @@ namespace basic_armor
 
               if (armor_data_.width * 1.0 / armor_data_.height > 1.0 && armor_data_.width * 1.0 / armor_data_.height < 5.0)
               {
-                //tools::Tools::drawDiagram("W/H", W_H_armor, armor_config_.window_scale, (armor_data_.width * 1.0 / armor_data_.height / 12.0), "time", "W/H", 12, cv::Scalar(255, 0, 0));
+                // tools::Tools::drawDiagram("W/H", W_H_armor, armor_config_.window_scale, (armor_data_.width * 1.0 / armor_data_.height / 12.0), "time", "W/H", 12, cv::Scalar(255, 0, 0));
                 armor_.push_back(armor_data_);
                 if (armor_config_.armor_draw == 1 ||
                     armor_config_.armor_edit == 1)
@@ -659,7 +659,7 @@ namespace basic_armor
     }
     if (armor_.size() < 1)
     {
-      // fmt::print("[{}] Info, armor not found\n", idntifier_green);
+      fmt::print("[{}] Info, armor not found\n", idntifier_green);
       return false;
     }
     return true;
@@ -699,21 +699,15 @@ namespace basic_armor
           armor_data_.width =
               getDistance(armor_data_.left_light.center,
                           armor_data_.right_light.center);
-
           armor_data_.aspect_ratio = armor_data_.width / (MAX(armor_data_.left_light.size.height, armor_data_.right_light.size.height));
-          // std::cout << "rat" << armor_data_.aspect_ratio << "\n";
           // 灯条角度差
           if (fabs(armor_data_.left_light.angle - armor_data_.right_light.angle) <
               armor_config_.armor_angle_different * 0.1)
           {
-
             cv::RotatedRect rects = cv::RotatedRect(
                 (armor_data_.left_light.center + armor_data_.right_light.center) / 2,
                 cv::Size(armor_data_.width * 0.5, armor_data_.height * 0.5 + 100),
                 armor_data_.tan_angle);
-
-            //(armor_data_.left_light.angle + armor_data_.right_light.angle) / 2
-
             armor_data_.armor_rect = rects;
             // 装甲板保存灯条离中心点的距离
             armor_data_.distance_center =
@@ -731,14 +725,30 @@ namespace basic_armor
               armor_data_.distinguish = 1;
               return true;
             }
-            // return true;
+            // fmt::print("[{}] armor_aspect not pass\n", idntifier_red);
+          }
+          else
+          {
+            // fmt::print("[{}] armor_angle_different not pass\n", idntifier_red);
           }
         }
+        else
+        {
+          // fmt::print("[{}] light_height_different not pass\n", idntifier_red);
+        }
+      }
+      else
+      {
+        // fmt::print("[{}] light_y_different not pass\n", idntifier_red);
       }
     }
-
+    else
+    {
+      // fmt::print("[{}] light_ratio not pass\n", idntifier_red);
+    }
     return false;
   }
+
   int Detector::averageColor()
   {
     armor_data_.left_light_height =
