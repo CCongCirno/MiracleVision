@@ -66,10 +66,13 @@ namespace uart
   // 机器人id
   enum RobotID
   {
+    NONE,
     HERO,        // 英雄
-    UAV,         // 无人机
     ENGINEERING, // 工程
-    INFANTRY,    // 步兵
+    INFANTRY_3,  // 步兵3
+    INFANTRY_4,  // 步兵4
+    INFANTRY_5,  // 步兵5
+    UAV,         // 无人机
     SENTRY       // 哨兵
   };
 
@@ -132,7 +135,7 @@ namespace uart
     {
       my_color = ALL;
       now_run_mode = AUTO_AIM;
-      my_robot_id = INFANTRY;
+      my_robot_id = INFANTRY_3;
       raw_bullet_velocity.veloctiy = 0;
       raw_yaw_angle.yaw = 0;
       raw_yaw_velocity.veloctiy = 0;

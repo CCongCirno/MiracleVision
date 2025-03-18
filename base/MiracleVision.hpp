@@ -30,6 +30,8 @@
 #include "module/angle_solve/angle_solve.hpp"
 #include "module/buff/new_buff.hpp"
 #include "utils/debug_tools.hpp"
+#include "module/tracker/ppm.hpp"
+#include "module/filter/basic_kalman.hpp"
 
 #include <string>
 

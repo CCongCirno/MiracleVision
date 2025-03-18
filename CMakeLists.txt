@@ -95,6 +95,10 @@ list(APPEND MV_EXTRA_LIBS mv-uart-serial)
 # Add module as shared library to build target
 list(APPEND EXTRA_INCLUDES module)
 
+list(APPEND EXTRA_INCLUDES ${PROJECT_SOURCE_DIR}/module/tracker)
+add_library(mv-tracker-ppm SHARED module/tracker/ppm.cpp)
+list(APPEND MV_EXTRA_LIBS mv-tracker-ppm)
+
 list(APPEND EXTRA_INCLUDES ${PROJECT_SOURCE_DIR}/module/angle_solve)
 add_library(mv-basic-pnp SHARED module/angle_solve/basic_pnp.cpp)
 list(APPEND MV_EXTRA_LIBS mv-basic-pnp)

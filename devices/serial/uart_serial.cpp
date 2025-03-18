@@ -351,7 +351,7 @@ namespace uart
       return;
     }
     // receive_buff_[1] = RED;
-    switch (receive_buff_[1])
+    /*switch (receive_buff_[1]) // deprecated
     {
     case RED:
       receive_data_.my_color = RED;
@@ -365,7 +365,7 @@ namespace uart
       receive_data_.my_color = ALL;
       fmt::print("[{}] My color is ALL\n", idntifier_green);
       break;
-    }
+    }*/
     switch (receive_buff_[2])
     {
     case AUTO_AIM:
@@ -384,17 +384,42 @@ namespace uart
       receive_data_.now_run_mode = AUTO_AIM;
       break;
     }
-
-    switch (receive_buff_[3])
+    switch ((receive_buff_[3] / 100) + 1)
+    {
+    case RED:
+      receive_data_.my_color = RED;
+      fmt::print("[{}] My color is RED\n", idntifier_green);
+      break;
+    case BLUE:
+      receive_data_.my_color = BLUE;
+      fmt::print("[{}] My color is BLUE\n", idntifier_green);
+      break;
+    default:
+      receive_data_.my_color = ALL;
+      fmt::print("[{}] My color is ALL\n", idntifier_green);
+      break;
+    }
+    switch (receive_buff_[3] % 100)
     {
     case HERO:
       receive_data_.my_robot_id = HERO;
+      fmt::print("[{}] My type is HERO\n", idntifier_green);
       break;
     case ENGINEERING:
       receive_data_.my_robot_id = ENGINEERING;
+      fmt::print("[{}] My type is ENGINEERING\n", idntifier_green);
       break;
-    case INFANTRY:
-      receive_data_.my_robot_id = INFANTRY;
+    case INFANTRY_3:
+      receive_data_.my_robot_id = INFANTRY_3;
+      fmt::print("[{}] My type is INFANTRY_3\n", idntifier_green);
+      break;
+    case INFANTRY_4:
+      receive_data_.my_robot_id = INFANTRY_4;
+      fmt::print("[{}] My type is INFANTRY_4\n", idntifier_green);
+      break;
+    case INFANTRY_5:
+      receive_data_.my_robot_id = INFANTRY_5;
+      fmt::print("[{}] My type is INFANTRY_5\n", idntifier_green);
       break;
     case UAV:
       receive_data_.my_robot_id = UAV;
@@ -403,7 +428,8 @@ namespace uart
       receive_data_.my_robot_id = SENTRY;
       break;
     default:
-      receive_data_.my_robot_id = INFANTRY;
+      receive_data_.my_robot_id = INFANTRY_3;
+      fmt::print("[{}] My type is defaut\n", idntifier_green);
       break;
     }
 

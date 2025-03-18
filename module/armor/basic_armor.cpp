@@ -640,7 +640,7 @@ namespace basic_armor
 
               if (armor_data_.width * 1.0 / armor_data_.height > 1.0 && armor_data_.width * 1.0 / armor_data_.height < 5.0)
               {
-                //tools::Tools::drawDiagram("W/H", W_H_armor, armor_config_.window_scale, (armor_data_.width * 1.0 / armor_data_.height / 12.0), "time", "W/H", 12, cv::Scalar(255, 0, 0));
+                // tools::Tools::drawDiagram("W/H", W_H_armor, armor_config_.window_scale, (armor_data_.width * 1.0 / armor_data_.height / 12.0), "time", "W/H", 12, cv::Scalar(255, 0, 0));
                 armor_.push_back(armor_data_);
                 if (armor_config_.armor_draw == 1 ||
                     armor_config_.armor_edit == 1)
@@ -731,10 +731,27 @@ namespace basic_armor
               armor_data_.distinguish = 1;
               return true;
             }
+            fmt::print("[{}] armor_aspect not pass\n", idntifier_red);
             // return true;
           }
+          else
+          {
+            fmt::print("[{}] armor_angle_different not pass\n", idntifier_red);
+          }
+        }
+        else
+        {
+          fmt::print("[{}] light_height_different not pass\n", idntifier_red);
         }
       }
+      else
+      {
+        fmt::print("[{}] light_y_different not pass\n", idntifier_red);
+      }
+    }
+    else
+    {
+      fmt::print("[{}] light_ratio not pass\n", idntifier_red);
     }
 
     return false;
