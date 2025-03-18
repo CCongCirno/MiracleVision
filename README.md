@@ -4,10 +4,10 @@
 
 A robot vision project for RoboMaster
 
-Iterate from RoboVision_Sirius(dgsyrc)
+Iterate from RoboVision_Sirius(ccongcirno)
 
-2024/02/20
-beta 0.1
+2025/03/19
+v1.0.0
 
 ## Document
 
