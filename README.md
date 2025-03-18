@@ -15,7 +15,7 @@ v1.0.0
 
 #### 源代码仓库
 
-源代码仓库：[dgsyrc/MiracleVision: A robot vision project for RoboMaster - https://github.com/](https://github.com/dgsyrc/MiracleVision)
+源代码仓库：[ccongcirno/MiracleVision: A robot vision project for RoboMaster - https://github.com/](https://github.com/ccongcirno/MiracleVision)
 
 #### 必要环境依赖
 
@@ -36,7 +36,7 @@ v1.0.0
 使用下列命令下载项目源码
 
 ```
-git clone https://github.com/dgsyrc/MiracleVision.git
+git clone https://github.com/ccongcirno/MiracleVision.git
 ```
 
 接着在 `MiracleVision/3rdparty` 下执行下列命令下载 `fmt` 库源码
@@ -167,6 +167,7 @@ git push -u origin main
 2024/02/20
 beta 0.1
 
-## Todo
+2025/03/19
+v1.0.0
 
 chrono::duration_cast
